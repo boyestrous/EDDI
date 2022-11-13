@@ -100,7 +100,7 @@ namespace EddiStarMapService
         public List<StarSystem> GetStarMapSystemsCube(string starSystem, int cubeLy = 200, bool showEdsmId = true, bool showCoordinates = true, bool showPrimaryStar = true, bool showInformation = true, bool showPermit = true)
         {
             if (starSystem == null) { return new List<StarSystem>(); }
-            if (cubeLy > 200) { Logging.Warn("The maximum allowable cube size is 200 LY. Results are automatically truncated."); }
+            if (cubeLy > 200) { Logging.Warn("The maximum allowable cube size is 200 LY. Results are truncated to the maximum size."); }
 
             var request = new RestRequest("api-v1/cube-systems", Method.POST);
             request.AddParameter("systemName", starSystem);
