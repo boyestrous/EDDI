@@ -59,6 +59,7 @@
     <Compile Include="ShipMonitorConfiguration.cs" />
     <Compile Include="SpeechResponderConfiguration.cs" />
     <Compile Include="StarMapConfiguration.cs" />
+    <Compile Include="TradeMonitorConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataDefinitions\EddiDataDefinitions.csproj">

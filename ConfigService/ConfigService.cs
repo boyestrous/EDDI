@@ -135,6 +135,16 @@ namespace EddiConfigService
             }
         }
 
+        public TradeMonitorConfiguration tradeMonitorConfiguration
+        {
+            get => currentConfigs[nameof(tradeMonitorConfiguration)] as TradeMonitorConfiguration;
+            set
+            {
+                currentConfigs[nameof(tradeMonitorConfiguration)] = value;
+                OnPropertyChanged();
+            }
+        }
+
         /// <summary>Saves configurations from the specified data directory</summary>
         private ConcurrentDictionary<string, Config> ReadConfigurations(string directory = null)
         {
@@ -156,7 +166,8 @@ namespace EddiConfigService
                 {nameof(missionMonitorConfiguration), FromFile<MissionMonitorConfiguration>(directory)},
                 {nameof(navigationMonitorConfiguration), FromFile<NavigationMonitorConfiguration>(directory)},
                 {nameof(shipMonitorConfiguration), FromFile<ShipMonitorConfiguration>(directory)},
-                {nameof(speechResponderConfiguration), FromFile<SpeechResponderConfiguration>(directory)}
+                {nameof(speechResponderConfiguration), FromFile<SpeechResponderConfiguration>(directory)},
+                {nameof(tradeMonitorConfiguration), FromFile<TradeMonitorConfiguration>(directory)}
             });
         }
 
